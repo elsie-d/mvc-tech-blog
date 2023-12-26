@@ -11,7 +11,7 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+ // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
 const sess = {
@@ -32,13 +32,13 @@ const sess = {
   resave: false,
   // forces a session to be saved when it is new regardless of if anything has changed
   saveUninitialized: true,
-  // where to store the session on the server
+  //where to store the session on the server
   store: new SequelizeStore({
-    db: sequelize
-  })
+   db: sequelize
+ })
 };
 
-app.use(session(sess));
+//app.use(session(sess));
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);
@@ -46,7 +46,8 @@ app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'))); 
+
 
 app.use(routes);
 
