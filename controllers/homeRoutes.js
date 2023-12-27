@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User , Blog } = require('../models');
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 
 
@@ -21,8 +21,8 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      blogs
-      //logged_in: req.session.logged_in 
+      blogs,
+     // logged_in: req.session.logged_in 
     });
   } catch (err) {
     res.status(500).json(err);
@@ -32,31 +32,31 @@ router.get('/', async (req, res) => {
 
 
 
-/* 
-// Initial test
-router.get('/', (req, res) => {
-  const message = 'success'
-  res.render('homepage', {
-    message
-  })
-}); */
 
-router.get('/dashboard', (req,res) => {
-  const message2 = 'dash success'
-  res.render('homepage', {
-    message2
-  })
-})
 
-/* //Initial test
-router.get('/blog', (req,res) => {
-  const message3= 'blog success'
-  res.render('homepage', {
-    message3
-  })
-}) */
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
 
-router.get('/blog/:id', async (req, res) => {
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
+router.get('/blog/:id', withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -70,11 +70,12 @@ router.get('/blog/:id', async (req, res) => {
     const blog = blogData.get({ plain: true });
 
     res.render('blog', {
-      ...blog
-     // logged_in: req.session.logged_in
+      ...blog,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
+    console.log('test')
   }
 });
 
@@ -83,12 +84,12 @@ router.get('/blog/:id', async (req, res) => {
 
 
 router.get('/login', (req, res) => {
- /*  if (req.session.logged_in) {
-    res.redirect('/profile');
+    if (req.session.logged_in) {
+    res.redirect('/');
     return;
-  } */
-
-  res.render('login works');
+  }  
+ 
+  res.render('login');
 });
 
 module.exports = router;
