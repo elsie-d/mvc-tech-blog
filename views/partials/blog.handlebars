@@ -1,0 +1,21 @@
+<div class="row mb-4 blog">
+  <div class="col-md-5">
+    <h1>
+     {{blog.title}}
+    </h1>
+    <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{blog.contents}}
+    </p>
+  </div>
+  <!--div class="col-md-7 comments">
+    {{#each blogs as |blog| }}
+<div class="col-md-7 comment">
+
+</div>
+
+    {{/each}} 
+  </div-->
+</div>

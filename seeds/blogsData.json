@@ -1,0 +1,15 @@
+[
+    {
+      "title": "Blog 1",
+      "contents": "Lorem ipsum dolor sit amet."
+      
+    },
+    {
+        "title": "Blog 2",
+        "contents": "Lorem ipsum dolor sit amet."
+    },
+    {
+        "title": "Blog 3",
+        "contents": "Lorem ipsum dolor sit amet."
+    }
+  ]
