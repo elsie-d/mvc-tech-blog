@@ -7,7 +7,7 @@
  <div class="col-md-6">
     <h3>Create a New Blog:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-blog-form">
       <div class="form-group">
         <label for="blog-name">Blog name:</label>
         <input class="form-input" type="text" id="blog-name" name="blog-name" />
@@ -24,7 +24,7 @@
   </div>
 
 
- <div class="col-md-6">
+ <div class="col-md-6 blog-list">
   {{#each blogs as |blog| }}  
   <div class="col-md-5">
     <h2>
@@ -37,8 +37,12 @@
       <a href="/blog/{{blog.id}}">Read blog &gt; </a>
     </p>
   </div>
+  <div class="col-md-4">
+    <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
+   </div>
 {{/each}} 
 </div>
 
-
+<script src="./js/dashboard.js"></script>
+</div>
 </div>
