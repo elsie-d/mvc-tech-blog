@@ -38,8 +38,8 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
-    res.status(200)
-   // res.status(200).json(blogDataData);
+    
+   res.status(200).json(blogDataData);
   } catch (err) {
     res.status(500).json(err);
     console.log('made it to delete request')
