@@ -10,12 +10,27 @@
       {{contents}}
     </p>
   </div>
-  <!--div class="col-md-7 comments">
-    {{#each blogs as |blog| }}
+  <div>
+     <form class="form new-comment-form">
+      
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+       <textarea class="form-input" id="comment" name="comment"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-7 comments">
+    {{#each comment as |comment| }}
 <div class="col-md-7 comment">
-
+      {{comment.comment}}
 </div>
 
     {{/each}} 
-  </div-->
+  </div>
 </div>
+
+<script src="/js/comments.js"></script>
