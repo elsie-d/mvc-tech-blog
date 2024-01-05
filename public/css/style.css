@@ -1,1 +1,57 @@
 /* style me */
+body {
+background-color: #dddecc;    
+font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+background-color: #736e67;
+text-align: right;
+color: white;
+height: 40px;
+}
+header a {
+    text-decoration: none;
+    color: white;
+}
+nav {
+    padding: 10px 30px ;
+    
+}
+button {
+    background-color:#736e67;
+    color: white;
+    border-radius: 50px;
+    height: 2em;
+   
+}
+
+h1 {
+    text-align: center;
+}
+h2 a {
+    text-decoration: none;
+}
+.form-group {
+    padding-top: 10px;
+}
+.blog {
+    text-align: center;
+}
+.blogs  {
+  
+   text-align: center;
+}
+.author {
+    font-style: italic;
+}
+.read {
+    
+    margin: 5px ;
+    
+}
+hr {
+    width: 80%;
+    margin-top: 20px ;
+
+}

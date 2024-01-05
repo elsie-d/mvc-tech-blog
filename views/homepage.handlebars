@@ -4,16 +4,17 @@
 
 {{#each blogs as |blog| }}
 <div class="row mb-4 blogs">
-  <div class="col-md-5">
+  <div class="col-md-5 card">
     <h2>
       <a href="/blog/{{blog.id}}">{{blog.title}}</a>
     </h2>
-    <p>Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
+    <p class="author">Created by {{blog.user.name}} on {{format_date blog.date_created}}</p>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-7 read">
     <p>
       <a href="/blog/{{blog.id}}">Read blog &gt; </a>
     </p>
   </div>
 </div>
+<hr>
 {{/each}} 
