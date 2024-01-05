@@ -1,14 +1,53 @@
-# MVC Boilerplate
 
-## Set up
-this boilerlate is intended to be used as a starting point for any MVC project with minimal setup. To get started do the following steps:
-1. In `db/schema.sql` rename the databse and run the file to create your database. 
-2. Copy `.env.EXAMPLE` and populate with you credentials
-3. Run `npm i`
-4. Run `npm start`
+# README GENERATOR
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
-## What's included
-- Model example (User)
-- Basic Templates
-- Basic Controllers
-- Auth (Controller, middleware, and templates)
+
+    
+## Description
+This project is a blog tool where users who sign up as a member, can read and create blogs. 
+            
+## Table of Contents
+            
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributions)
+- [Tests](#tests)
+
+- [License](#license)
+        
+- [Questions](#questions)
+            
+## Installation
+Node.js + dependencies:
+ - bcrypt
+ - connect-session-sequelize
+ - dotenv
+ - express
+ - express-handlebars
+ - express-session
+ - mysql2
+ - sequelize
+
+            
+            
+## Usage
+Before running the app on your local host, be sure to acticate the database with mysql in terminal. Also make sure seeds have been processed to see the default data. Last but not least, update the .env file with your mysql credentials. Once those steps have been take care of, you can `npm start` the app and use in local host. 
+
+            
+## Contributions
+Reach out to repo owner
+            
+
+            
+## License
+ISC
+            
+            
+## Questions?
+Find me on GitHub: <a href="https://github.com/elsie-d" target="_blank">elsie-d</a>
+            
+OR
+            
+Email me at: <a href="mailto:elsie.dh@gmail.com" target="_blank">elsie.dh@gmail.com</a>
+  
